@@ -1,0 +1,111 @@
+body {
+    background-color: #619866;
+}
+
+.carrossel {
+  width: 600px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background-color: #f8f9fa;
+}
+
+.slide img {
+  width: 100%;
+  max-width: 432px;
+  height: auto;
+}
+
+/* Radio buttons invisíveis */
+input[type="radio"] {
+  display: none;
+}
+
+/* Slide ativo */
+#slide1:checked ~ .slides {
+  transform: translateX(0%);
+}
+#slide2:checked ~ .slides {
+  transform: translateX(-100%);
+}
+#slide3:checked ~ .slides {
+  transform: translateX(-200%);
+}
+
+/* Bolinhas de navegação */
+.nav-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+.nav-dots label {
+  width: 12px;
+  height: 12px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+input#slide1:checked ~ .nav-dots label[for="slide1"],
+input#slide2:checked ~ .nav-dots label[for="slide2"],
+input#slide3:checked ~ .nav-dots label[for="slide3"] {
+  background: #000;
+}
+
+/* Botões de navegação ← → */
+.nav-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.nav-buttons div {
+  display: none;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 15px;
+  pointer-events: auto;
+}
+
+.nav-buttons label {
+  font-size: 30px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #000;
+}
+
+/* Mostrar só os botões do slide ativo */
+#slide1:checked ~ .nav-buttons .grupo-1,
+#slide2:checked ~ .nav-buttons .grupo-2,
+#slide3:checked ~ .nav-buttons .grupo-3 {
+  display: flex;
+}
+
+
+
