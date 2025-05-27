@@ -1,0 +1,30 @@
+body{
+    background-color: #619866;
+}
+h1 {
+    color: whitesmoke;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+
+}
+ul {
+    color: white;
+    font-family: 'Arial', sans-serif;
+    list-style-type: none;
+    padding: 0;
+    margin: 40px;
+    
+}
+h2 {
+    color: whitesmoke;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+}
+p {
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 40px;
+}
